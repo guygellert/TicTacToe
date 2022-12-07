@@ -175,7 +175,6 @@ public class MainActivity extends AppCompatActivity {
         Button playAgainButton = (Button)  findViewById(R.id.button);
         playAgainButton.setVisibility(View.VISIBLE);
 
-        //this.isPlaying = false;
         if((this.counter == this.gameState.length) && (isPlaying == true))
         {
             gameStatus.setImageResource(R.mipmap.ic_no_win_foreground);
