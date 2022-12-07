@@ -129,6 +129,7 @@ public class MainActivity extends AppCompatActivity {
                 ImageView winningLine = findViewById(R.id.mark);
                 winningLine.setImageResource(getMarkImg(winState[3]));
                 setWinningBoard(this.gameState[winState[0]]);
+                this.isPlaying = false;
                 return true;
             }
         }
@@ -174,10 +175,11 @@ public class MainActivity extends AppCompatActivity {
         Button playAgainButton = (Button)  findViewById(R.id.button);
         playAgainButton.setVisibility(View.VISIBLE);
 
-        this.isPlaying = false;
-        if(this.counter == this.gameState.length)
+        //this.isPlaying = false;
+        if((this.counter == this.gameState.length) && (isPlaying == true))
         {
             gameStatus.setImageResource(R.mipmap.ic_no_win_foreground);
+            this.isPlaying = false;
         }
     }
 }
