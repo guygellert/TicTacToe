@@ -151,8 +151,8 @@
 
     <ImageView
         android:id="@+id/gameStatus"
-        android:layout_width="381dp"
-        android:layout_height="91dp"
+        android:layout_width="354dp"
+        android:layout_height="95dp"
         android:adjustViewBounds="true"
         android:scaleType="fitXY"
         android:textAlignment="center"
@@ -175,51 +175,13 @@
         app:layout_constraintTop_toBottomOf="@+id/gameStatus" />
 
     <ImageView
-        android:id="@+id/mark1"
-        android:layout_width="390dp"
-        android:layout_height="401dp"
-        android:visibility="invisible"
-        app:srcCompat="@mipmap/ic_mark_1_foreground"
-        tools:layout_editor_absoluteX="21dp"
-        tools:layout_editor_absoluteY="41dp" />
-
-    <ImageView
-        android:id="@+id/mark2"
-        android:layout_width="401dp"
-        android:layout_height="378dp"
-        android:visibility="invisible"
-        app:srcCompat="@mipmap/ic_mark_2_foreground"
-        tools:layout_editor_absoluteX="6dp"
-        tools:layout_editor_absoluteY="47dp" />
-
-    <ImageView
-        android:id="@+id/mark3"
-        android:layout_width="343dp"
-        android:layout_height="352dp"
-        android:scaleType="fitXY"
-        android:visibility="invisible"
-        app:srcCompat="@mipmap/ic_mark_3_foreground"
-        tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="61dp" />
-
-    <ImageView
-        android:id="@+id/mark4"
-        android:layout_width="338dp"
-        android:layout_height="340dp"
-        android:scaleType="fitXY"
-        android:visibility="invisible"
-        app:srcCompat="@mipmap/ic_mark_4_foreground"
-        tools:layout_editor_absoluteX="35dp"
-        tools:layout_editor_absoluteY="62dp" />
-
-    <ImageView
-        android:id="@+id/mark5"
-        android:layout_width="344dp"
-        android:layout_height="341dp"
-        android:visibility="invisible"
-        app:srcCompat="@mipmap/ic_mark_5_foreground"
-        tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="61dp" />
+        android:id="@+id/mark"
+        android:layout_width="377dp"
+        android:layout_height="396dp"
+        android:layout_weight="1"
+        app:srcCompat="@mipmap/ic_empty_foreground"
+        tools:layout_editor_absoluteX="27dp"
+        tools:layout_editor_absoluteY="50dp" />
 
 
 </android.support.constraint.ConstraintLayout>
