@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         ImageView gameStatus = findViewById(R.id.gameStatus);
         this.playerTurn = State.X;
         setTurnImage(gameStatus);
@@ -111,19 +112,15 @@ public class MainActivity extends AppCompatActivity {
                 setImg(imgView);
                 changePlayer();
                 setTurnImage(gameStatus);
-
-                if (checkWinner() != State.EMPTY) {
-                    endGame();
-                }
             }
 
-            if (this.counter == this.gameState.length) {
+            if (checkWinner() || (this.counter == this.gameState.length)) {
                 endGame();
             }
         }
     }
 
-    private State checkWinner()
+    private boolean checkWinner()
     {
         for (int[] winState : winningStates ) {
             if ( (this.gameState[winState[0]] == this.gameState[winState[1]]) &&
@@ -131,12 +128,11 @@ public class MainActivity extends AppCompatActivity {
                  (this.gameState[winState[0]] != State.EMPTY) ) {
                 ImageView winningLine = findViewById(R.id.mark);
                 winningLine.setImageResource(getMarkImg(winState[3]));
-                //winningLine.setVisibility(View.VISIBLE);
                 setWinningBoard(this.gameState[winState[0]]);
-                return this.gameState[winState[0]];
+                return true;
             }
         }
-        return State.EMPTY;
+        return false;
     }
 
     private void setWinningBoard(State winningState) {
@@ -161,6 +157,12 @@ public class MainActivity extends AppCompatActivity {
                 return R.mipmap.ic_mark_4_foreground;
             case 5:
                 return R.mipmap.ic_mark_5_foreground;
+            case 6:
+                return R.mipmap.ic_mark_6_foreground;
+            case 7:
+                return R.mipmap.ic_mark_7_foreground;
+            case 8:
+                return R.mipmap.ic_mark_8_foreground;
             default:
                 return R.mipmap.ic_empty_background;
         }
@@ -177,9 +179,5 @@ public class MainActivity extends AppCompatActivity {
         {
             gameStatus.setImageResource(R.mipmap.ic_no_win_foreground);
         }
-//        else
-//        {
-//            //
-//        }
     }
 }
